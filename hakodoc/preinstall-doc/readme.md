@@ -86,8 +86,10 @@ Windows環境で、箱庭ドローンシミュレータを利用するにあた�
 
 |No|ソフトウェア環境|概要|
 |:---|:---|:---|
-|1|WSL2(Windows Subsystem for Linux)|ドローン飛行に必要なフライトコントローラのソフトウェアを動作させる環境として利用します。フライトコントローラはPX4、Ardupilotが利用できます。|
-|2|Python環境|箱庭シミュレータでPythonでの制御に必要になります。対応バージョンは、3.12のみです。|
-|3|Ground Control software|フライトコントローラ(WSL2上で動作)と連携し、ドローン飛行の制御やドローンフライトプランなどに利用します|
-|4|RAM Disk環境(lmdisk)|アセット間で通信する際に共有メモリとして利用します|
-|5|Visualze Software|ドローンのモデルや飛行状況を投影するのに利用します(ライセンス注意!)現在はUnityとUnreal Engineが利用できます。|
+|1|[WSL2(Windows Subsystem for Linux)](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/wsl_install.md)|ドローン飛行に必要なフライトコントローラのソフトウェアを動作させる環境として利用します。フライトコントローラはPX4、Ardupilotが利用できます。|
+|2|[Python環境](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)|箱庭シミュレータでPythonでの制御に必要になります。対応バージョンは、3.12のみです。|
+|3|[RAM Disk環境(lmdisk)](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/lmdisk_install.md)|アセット間で通信する際に共有メモリとして利用します|
+|4-1|[Ground Control software:QGC](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/qgc_install.md)|QGC編：フライトコントローラ(WSL2上で動作)と連携し、ドローン飛行の制御やドローンフライトプランなどに利用します|
+|4-2|[Ground Control software:Mission Planner]()|(準備中！！)Mission Planner編フライトコントローラ(WSL2上で動作)と連携し、ドローン飛行の制御やドローンフライトプランなどに利用します|
+|5|[Visualze Software:Unity](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/unity_install.md)|Unity編：ドローンの機体モデルや飛行状況を投影するのに利用します(利用にあたってはライセン条項を確認してください。)|
+|5|[Visualze Software:Unreal Engine]()|(準備中！！)Unreal Engine編：ドローンの機体モデルや飛行状況を投影するのに利用します(利用にあたってはライセン条項を確認してください。)|
