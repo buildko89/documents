@@ -1,13 +1,13 @@
 # 前提条件
 
-箱庭コア機能をインストールするには、Python 3.12、lmdiskのインストールが終わっていることが条件となります。
+箱庭アプリをインストールするには、箱庭コア機能、lmdisk、Python 3.12のインストールが終わっていることが条件となります。
 以下のドキュメントを参照して、事前にインストールしておいてください。
 
 [lmdiskインストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/lmdisk_install.md)
 
 [Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)
 
-# 箱庭コア機能のダウンロード
+# 箱庭コア機能インストーラのダウンロード
 
 箱庭ドローンシミュレータに必要な`箱庭コア機能`をインストールするためのインストーラを入手します。以下のリリースページに`hakoCore-win_vx.x.x.zip`で配布されています。
 
