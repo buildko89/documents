@@ -18,10 +18,14 @@
 <!-- TOC -->
 
 - [本ドキュメントについて](#本ドキュメントについて)
-  - [箱庭ドローンシミュレータ用のリポジトリ](#箱庭ドローンシミュレータ用のリポジトリ)
+  - [Ubuntu 24.04ビルド用の環境設定](#ubuntu-2404ビルド用の環境設定)
+  - [箱庭ドローンシミュレータ用のリポジトリの説明](#箱庭ドローンシミュレータ用のリポジトリの説明)
 - [各リポジトリのビルドとインストール](#各リポジトリのビルドとインストール)
+  - [箱庭ドローンシミュレータのインストール](#箱庭ドローンシミュレータのインストール)
   - [箱庭コアのビルドとインストール](#箱庭コアのビルドとインストール)
     - [箱庭コアのビルド](#箱庭コアのビルド)
+    - [箱庭コアのインストール](#箱庭コアのインストール)
+  - [mujocoのインストール](#mujocoのインストール)
 
 <!-- /TOC -->
 
@@ -50,7 +54,40 @@
 
 Ubuntu 24.04上で、箱庭ドローンシミュレータを動作させるためのインストール手順になります。
 
-## 箱庭ドローンシミュレータ用のリポジトリ
+PCのスペックは、以下のものが最低限必要になります。
+
+- PCのスペック(最低限)
+
+|PCスペック|説明|
+|:---|:---|
+|CPU|corei7 or Ryzen 7|
+|Memory|16Gbyte|
+|Storage|500GByte|
+|GPU|NVIDIA RTX系のもの|
+
+‐ 利用する環境一覧
+
+|利用環境名|説明|備考|
+|:---|:---|:---|
+|OS|Ubuntu 24.04|LTSのものを選択。インストール手順は割愛|
+|Python|3.12|Pyenvにて仮想環境を利用|
+|ビルド環境|Ubuntu 24.04で利用できるコンパイラなど|事前にインストール必要|
+
+
+**本ドキュメントでは、githubからのクーロンやUbuntuのコマンド操作部分などで、コピー&ペーストが必要な部分には、$等は含みません**
+
+## Ubuntu 24.04ビルド用の環境設定
+
+aptコマンドを利用して、箱庭ドローンシミュレータのビルドに必要な環境を設定します。
+
+```bash
+sudo apt update
+
+sudo apt install repo gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect python3-venv xz-utils debianutils iputils-ping python3-git python3-jinja2 libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool locales tar python-is-python3 file libxml-opml-simplegen-perl vim whiptail g++ libacl1 cmake
+```
+
+
+## 箱庭ドローンシミュレータ用のリポジトリの説明
 
 Ubuntu 24.04で利用する箱庭ドローンシミュレータ用のリポジトリは3つになります。
 
@@ -69,25 +106,49 @@ Ubuntu 24.04で利用する箱庭ドローンシミュレータ用のリポジ�
 # 各リポジトリのビルドとインストール
 
 各リポジトリをgithubからPCにクーロンしてきて、ビルドしてインストールを行います。
-
-PCのスペックは、以下のものが最低限必要になります。
-
-- PCのスペック(最低限)
-
-|PCスペック|説明|
-|:---|:---|
-|CPU|corei7 or Ryzen 7|
-|Memory|16Gbyte|
-|Storage|500GByte|
-|GPU|NVIDIA RTX系のもの|
-
 本ドキュメントでは、各ホームディレクトリに作業用のディレクトリとして、hakoniwaディレクトリ作成する想定となります。
 
 ```bash
 $ cd
 $ mkdir hakoniwa
 ```
-**なお、githubからのクーロン部分など、コピーが必要な部分には、$は含みませんので間違わないようにしてください**
+
+## 箱庭ドローンシミュレータのインストール
+
+githubからクーロンを行います。
+
+```bash
+$ cd
+$ cd hakoniwa
+```
+```git
+git clone --recursive https://github.com/toppers/hakoniwa-drone-core.git
+```
+
+クーロンができたら、箱庭ドローンシミュレータのインストールを実行します。
+
+```bash
+bash install-drone-ubuntu.bash
+```
+
+インストール用のスクリプトを実行すると、以下のように`sudoコマンド`のパスワードを聞かれますので、パスワードを入力して実行してください。パスワード入力がなければ、以下の部分は無視してください。
+
+```txt
+[ 1/1 ] Preflight checks (apt environment & build deps)
+[sudo] password for buildman:
+```
+
+最後に以下のメッセージが出力されたらインストール完了です。
+
+```txt
+ :
+中略
+ :
+All done! Current Python: Python 3.12.3
+Tip: open a new shell so your /home/buildman/.bashrc changes take effect there too.
+```
+
+インストールされると、`.bashrc`が更新されますので、再読み込みするか、シェル画面を再起動してください。
 
 ## 箱庭コアのビルドとインストール
 
@@ -111,4 +172,56 @@ $ cd hakoniwa-core-pro
 $ bash build.bash
 ```
 
+以下のようなメッセージが出れば成功です。
+
+```txt
+ :
+中略
+ :
+[ 96%] Building CXX object examples/service/CMakeFiles/client.dir/src/asset_client.cpp.o
+[ 97%] Linking CXX executable client
+[ 97%] Built target client
+[ 98%] Building CXX object sources/assets/bindings/python/CMakeFiles/hako_asset_python.dir/src/hako_asset_python.cpp.o
+[100%] Linking CXX shared library hakopy.so
+[100%] Built target hako_asset_python
+```
+
+
+### 箱庭コアのインストール
+
+ビルドした箱庭コアをインストールします。
+
+```bash
+$ cd hakoniwa-core-pro
+$ bash install.bash
+```
+
+インストール用のスクリプトを実行すると、以下のように`sudoコマンド`のパスワードを聞かれますので、パスワードを入力して実行してください。パスワード入力がなければ、以下の部分は無視してください。
+
+```txt
+[ 98%] Building CXX object sources/assets/bindings/python/CMakeFiles/hako_asset_python.dir/src/hako_asset_python.cpp.o
+[100%] Linking CXX shared library hakopy.so
+[100%] Built target hako_asset_python
+Step 2/2: Installing project to /usr/local/hakoniwa...
+[sudo] password for buildman:
+```
+
+以下のようなメッセージが出れば成功です。
+
+```txt
+ :
+中略
+ :
+Configuring directory for mmap files...
+
+Hakoniwa installation completed successfully.
+Installation manifest is located at: cmake-build/install_manifest.txt
+```
+
+## mujocoのインストール
+
+箱庭ドローンシミュレータでは、物理的なシミュレーション部分をMuJoCoといわれるライブラリを使って対応しています。
+箱庭ドローンシミュレータを利用するためには、MuJoCoをインストールする必要があります。手順は、以下になります。
+
+[MuJoCoインストール](../mujoco/hako_libinst.md)
 
