@@ -6,7 +6,7 @@
     <div style="font-size:14pt;font-weight:bold;text-align:center;margin-top:20px"><span class="sub-title">Visualze Software(Unity編)インストール</span></div>
     </p>
     <p>
-    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">ドローンWG</span></div>
+    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">箱庭ラボコミュニティ</span></div>
     </p>
 </div>
 
@@ -74,7 +74,10 @@ Unity Hub環境がインストールされたら、Unity Hubが起動されま�
 ![Unity ID作成とサインイン](./unity/unity13.png)
 
 
-サインインができたら、左下のDownloadをクリックして、利用可能なUnityエンジンをDownloadします。ダウンロードが完了したら、設定アイコンをクリックしてLincenseをクリックします。「Add new license」が表示されるので、Get a free personal licenseをクリックして、Personalライセンスを取得します。取得後、Personal Lincenseが取得されたことが確認できます。
+サインインができたら、左下のDownloadをクリックして、利用可能なUnityエンジンをDownloadします。Unityの最新は6.3 LTSになっていますが、箱庭ドローンシミュレータでは、Unity 6.2を前提としていますので、6.2 LTSを選択してください。
+
+
+ダウンロードが完了したら、設定アイコンをクリックしてLincenseをクリックします。「Add new license」が表示されるので、Get a free personal licenseをクリックして、Personalライセンスを取得します。取得後、Personal Lincenseが取得されたことが確認できます。
 
 ![Unityのインストールとライセンス設定](./unity/unity14.png)
 

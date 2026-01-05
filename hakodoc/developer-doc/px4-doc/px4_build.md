@@ -56,8 +56,8 @@ githubに公開されている[PX4-Autopilot](https://github.com/PX4/PX4-Autopil
 Windows環境では、WSL2を前提にしています。WSL2での動作に影響がでないたいめにも、/mnt/cなどには導入しないようにしてください。
 
 ```bash
-mkdir build
-cd build
+mkdir px4
+cd px4
 ```
 ```bash
 git clone --recursive https://github.com/PX4/PX4-Autopilot.git
@@ -68,7 +68,7 @@ git clone --recursive https://github.com/PX4/PX4-Autopilot.git
 gitでcloneしたソフトウェアをビルドします。ビルドに必要なパッケージ類は自動的に設定されます。
 
 ```bash
-cd ~/build/PX4-Autopilot
+cd ~/px4/PX4-Autopilot
 ```
 ```bash
 bash Tools/setup/ubuntu.sh --no-nuttx --no-sim-tools
