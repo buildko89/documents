@@ -23,6 +23,7 @@
   - [3.1. 箱庭ドローンシミュレータのインストール](#31-箱庭ドローンシミュレータのインストール)
     - [3.1.1. 箱庭コア機能](#311-箱庭コア機能)
     - [3.1.2. 箱庭Pythoモジュール](#312-箱庭pythoモジュール)
+      - [3.1.2.1. python site-packageの導入](#3121-python-site-packageの導入)
   - [3.2. mujocoのインストール](#32-mujocoのインストール)
 - [4. トラブルシュート](#4-トラブルシュート)
   - [4.1. mmapの権限](#41-mmapの権限)
@@ -133,6 +134,17 @@ Tip: open a new shell so your /home/buildman/.bashrc changes take effect there t
 ### 3.1.2. 箱庭Pythoモジュール
 
 `install-drone-ubuntu.bash`で箱庭ドローンシミュレータが利用する箱庭pythonモジュールは、Pythonの仮想環境にsite-packageとしてインストールされます。本手順でインストールをした場合には、箱庭Pythonモジュールのインストールは不要になります。
+
+#### 3.1.2.1. python site-packageの導入
+
+以下のPythonモジュールをインストールしてください。
+
+```bash
+$ pip install pygame
+$ pip install numpy
+$ pip install opencv-python
+```
+
 
 ## 3.2. mujocoのインストール
 
