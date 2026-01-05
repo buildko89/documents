@@ -6,7 +6,7 @@
     <div style="font-size:14pt;font-weight:bold;text-align:center;margin-top:20px"><span class="sub-title">Graund Control software(QGC編)インストール</span></div>
     </p>
     <p>
-    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">ドローンWG</span></div>
+    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">箱庭ラボコミュニティ</span></div>
     </p>
 </div>
 

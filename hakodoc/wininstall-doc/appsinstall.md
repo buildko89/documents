@@ -1,4 +1,4 @@
-# 前提条件
+# 1. 前提条件
 
 箱庭アプリをインストールするには、箱庭コア機能、lmdisk、Python 3.12のインストールが終わっていることが条件となります。
 
@@ -13,13 +13,13 @@ lmdisk、Ptython 3.12は箱庭コア機能のインストール時にインス�
 [Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)
 
 
-# 箱庭アプリインストーラのダウンロード
+# 2. 箱庭アプリインストーラのダウンロード
 
 箱庭ドローンシミュレータに必要な`箱庭アプリ`をインストールするためのインストーラを入手します。以下のリリースページに`hakoApps-win_vx.x.x.zip`で配布されています。
 
 [箱庭アプリインストーラ](https://github.com/buildko89/appsinstaller/releases)
 
-# 箱庭アプリのインストール
+# 3. 箱庭アプリのインストール
 
 `hakoApps-win_vx.x.x.zip`をダウンロードしたら、zipファイルを解凍します。解凍すると、`setup.exe`、`hakowin-msi`が解凍されます。
 
