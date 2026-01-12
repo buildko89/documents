@@ -160,13 +160,22 @@ UnityのFileメニューから`Build Profiles`を選択します。
 
 ![Unity操作9](./images/unitybuild9.png)
 
+`Switch Platform`が完了したら、右上にある`Player Settings`をクリックします。
+
+![Unity操作10](./images/unitybuildsetting1.png)
+
+`Player Settings`の画面が開くので、**Company Name**、**Product Name**、**Version**の部分を変更します。変更したら閉じてください。
+
+![Unity操作11](./images/unitybuildsetting2.png)
+
+
 `Active`にできたら、右下のBuildボタンの🔽の部分をクリックして、`Clean Build…`をクリックします。
 
-![Unity操作10](./images/unitybuild10.png)
+![Unity操作12](./images/unitybuild10.png)
 
 クリックするとビルド結果を出力するフォルダを選択するように指示されるので、右クリックにて適切なフォルダ名を作成してください。
 
-![Unity操作11](./images/unitybuild11.png)
+![Unity操作13](./images/unitybuild11.png)
 
 フォルダの選択ができるとビルドが始まります。ビルドが完了するまで待ってください。もし、Errorが出た場合などは、対応を行ってください。
 
