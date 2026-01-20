@@ -151,7 +151,7 @@ $ pip install opencv-python
 箱庭ドローンシミュレータでは、物理的なシミュレーション部分をMuJoCoといわれるライブラリを使って対応しています。
 箱庭ドローンシミュレータを利用するためには、MuJoCoをインストールする必要があります。手順は、以下になります。
 
-[MuJoCoインストール](../mujoco/hako_libinst.md)
+[MuJoCoインストール](../mujoco-doc/hako_libinst.md)
 
 
 # 4. トラブルシュート
