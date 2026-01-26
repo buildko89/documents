@@ -25,6 +25,7 @@
     - [2.2.1. LiDAR可視化用のスクリプト配置](#221-lidar可視化用のスクリプト配置)
       - [2.2.1.1. LiDARセンサデータ可視化用のスクリプト配置](#2211-lidarセンサデータ可視化用のスクリプト配置)
       - [2.2.1.2. LiDARセンサデータの可視化UI用のスクリプト配置](#2212-lidarセンサデータの可視化ui用のスクリプト配置)
+    - [2.2.2. LiDARスクリプトの初期化](#222-lidarスクリプトの初期化)
   - [2.3. 動作確認](#23-動作確認)
 
 <!-- /TOC -->
@@ -105,6 +106,73 @@ SensorがLiDARセンサになります。
 配置したら、LiDARUIを選択した状態で、`Inspecor`にDroneLiDARUI.csのスクリプトをドラッグ＆ドロップで配置します。
 
 ![LiDAR可視化6](./images/vLiDAR/vl8.png)
+
+### 2.2.2. LiDARスクリプトの初期化
+
+Assets/Scripts/Hakoniwa/HakoSim/DroneAvatar.csに配置したLiDARスクリプトの初期化コードを追加します。
+以下を追加してください。
+
+```C#
+using hakoniwa.visualization.lidar;
+
+～中略～
+
+namespace hakoniwa.drone.sim
+{
+    public class DroneAvatar : MonoBehaviour, IHakoObject, IDroneBatteryStatus, IMovableObject
+    {
+
+～中略～
+
+        private LiDAR3DController[] lidars;
+        private Drone3DLiDARVisualizer[] visualizers;
+
+～中略～
+
+        public void EventInitialize()
+        {
+
+～中略～
+            /*
+             * LiDAR
+             */
+            lidars = this.GetComponentsInChildren<LiDAR3DController>();
+            if (lidars != null)
+            {
+                if (droneConfig)
+                {
+                    droneConfig.SetLidarPosition(robotName);
+                }
+                foreach(var lidar in lidars)
+                {
+                    lidar.DoInitialize(robotName, hakoPdu);
+                }
+            }
+            // LiDARのポイントクラウドを読み取るため、PDUを宣言しておく
+            try
+            {
+                var retLidar = hakoPdu.DeclarePduForRead(robotName, "lidar_points");
+                if (retLidar == false)
+                {
+                    Debug.LogWarning($"Can not declare pdu for read: {robotName} lidar_points");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"Exception while declaring lidar_points PDU: {ex.Message}");
+            }
+            /*
+             * LiDAR Visualizer
+             */
+            visualizers = this.GetComponentsInChildren<Drone3DLiDARVisualizer>();
+
+～中略～
+        }
+    }
+}
+```
+
+
 
 ## 2.3. 動作確認
 
