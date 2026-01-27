@@ -135,7 +135,7 @@ Tip: open a new shell so your /home/buildman/.bashrc changes take effect there t
 
 ### 3.1.2. 箱庭Pythoモジュール
 
-Python APIや、箱庭PDUをモニタリングする場合など、ドローンの飛行以外に箱庭ドローンシミュレータの拡張機能を利用する場合には、箱庭コア機能のインストールが必要になります。
+Python APIや、箱庭PDUをモニタリングする場合など、ドローンの飛行以外に箱庭ドローンシミュレータの拡張機能を利用する場合には、箱庭コア機能のインストールが必要になります。`箱庭コアのインストール`を参照してください。
 
 #### 3.1.2.1. python site-packageの導入
 
@@ -161,7 +161,6 @@ $ pip install opencv-python
 インストール手順は、以下を参照してください。
 
 [箱庭コア機能のインストール](./ubuntu24.04hakocore.md)
-
 
 
 # 4. トラブルシュート
