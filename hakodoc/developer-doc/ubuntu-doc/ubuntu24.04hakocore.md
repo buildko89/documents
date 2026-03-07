@@ -24,7 +24,9 @@
   - [2.1. 箱庭コアのビルドとインストール](#21-箱庭コアのビルドとインストール)
     - [2.1.1. 箱庭コアのビルド](#211-箱庭コアのビルド)
     - [2.1.2. 箱庭コアのインストール](#212-箱庭コアのインストール)
-    - [2.1.3. 環境変数の設定](#213-環境変数の設定)
+  - [2.2. トラブルシュート](#22-トラブルシュート)
+    - [.basurcの追加](#basurcの追加)
+    - [hakopyの追加](#hakopyの追加)
 
 <!-- /TOC -->
 
@@ -44,6 +46,7 @@
 |No|日付|版数|変更種別|変更内容|
 |:---|:---|:---|:---|:---|
 |1|2026/01/02|0.1|新規|新規作成|
+|2|2026/01/27|0.2|変更|インストール手順の変更|
 ||||||
 
 <!-- 改ページ -->
@@ -156,13 +159,32 @@ Hakoniwa installation completed successfully.
 Installation manifest is located at: cmake-build/install_manifest.txt
 ```
 
-### 2.1.3. 環境変数の設定
+## 2.2. トラブルシュート
 
-箱庭コア機能をインストールした場合には、以下の環境変数を`.bashrc`に設定してください。設定後、`.bashrc`を再読み込みするか、シェルを再起動するかを行ってください。
+### .basurcの追加
+
+箱庭コア機能を単独でインストールした場合には、以下の環境変数を`.bashrc`に設定してください。設定後、`.bashrc`を再読み込みするか、シェルを再起動するかを行ってください。
 
 ```env
 export HAKO_BINARY_PATH=/usr/local/hakoniwa/share/hakoniwa/offset
 export HAKO_CONFIG_PATH=/etc/hakoniwa/cpp_core_config.json
 export LD_LIBRARY_PATH=/usr/local/hakoniwa/lib/:${LD_LIBRARY_PATH}
 export PATH=/usr/local/hakoniwa/bin:$PATH
+```
+
+### hakopyの追加
+
+箱庭コア機能をインストールした場合にPython API用のライブラリがなかった場合には、以下の手順で対応してください。
+
+```bash
+$ sudo mkdir -p /usr/local/hakoniwa/py 
+$ cd hakoniwa-core-pro
+$ cp ./cmake-build/sources/assets/bindings/python/hakopy.so /usr/local/hakoniwa/py
+$ sudo ldconfig
+```
+
+以下のパスを.bashrcに追加してください。
+
+```env 
+export PYTHONPATH=/usr/local/hakoniwa/py:${PYTHONPATH}
 ```
