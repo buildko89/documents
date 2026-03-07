@@ -44,7 +44,7 @@
 
 # 1. Python環境のインストール
 
-Pythonの公式ページにアクセスして、PythonをWindowsで動作させる環境を入手します。PythonのVersionは、3.12になります。最新バージョンでは動作しないため注意してください。
+Pythonの公式ページにアクセスして、PythonをWindowsで動作させる環境を入手します。**PythonのVersionは、3.12**になります。最新バージョンでは動作しないため注意してください。
 
 [Python公式ページ](https://www.python.org/)
 

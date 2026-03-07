@@ -7,11 +7,21 @@
 
 [Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)
 
+## 1.1. python環境について
+
+箱庭コア機能のインストールを実行時に箱庭用のpythonモジュールを`pip`コマンドでインストールが実行されます。
+
+python環境を構築したら、`pip`コマンドのupgradeが必要になる場合があるので、以下のコマンドを実行しておいてください。
+
+```powershell
+python -m  pip install --upgrade pip
+```
+
 # 2. 箱庭コア機能インストーラのダウンロード
 
 箱庭ドローンシミュレータに必要な`箱庭コア機能`をインストールするためのインストーラを入手します。以下のリリースページに`hakoCore-win_vx.x.x.zip`で配布されています。
 
-[箱庭コア機能インストーラ](https://github.com/buildko89/coreinstaller/releases)
+[箱庭コア機能インストーラの場所](https://github.com/buildko89/hakowin/releases/download/v1.0.2/hakoCore-win_v1.0.2.zip)
 
 # 3. 箱庭コア機能のインストール
 
