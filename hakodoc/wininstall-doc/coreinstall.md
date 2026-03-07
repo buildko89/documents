@@ -7,9 +7,11 @@
 
 [Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)
 
+**pythonは、3.12以外のバージョンでは動作しないため注意してください。**
+
 ## 1.1. python環境について
 
-箱庭コア機能のインストールを実行時に箱庭用のpythonモジュールを`pip`コマンドでインストールが実行されます。
+箱庭コア機能のインストールを実行時に箱庭用のpythonモジュールを`pip`コマンドでインストールします。
 
 python環境を構築したら、`pip`コマンドのupgradeが必要になる場合があるので、以下のコマンドを実行しておいてください。
 
