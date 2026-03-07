@@ -19,9 +19,9 @@ python -m  pip install --upgrade pip
 
 # 2. 箱庭コア機能インストーラのダウンロード
 
-箱庭ドローンシミュレータに必要な`箱庭コア機能`をインストールするためのインストーラを入手します。以下のリリースページに`hakoCore-win_vx.x.x.zip`で配布されています。
+箱庭ドローンシミュレータに必要な`箱庭コア機能`をインストールするためのインストーラを入手します。以下のリンクをクリックすると`hakoCore-win_vx.x.x.zip`がダウンロードされます。
 
-[箱庭コア機能インストーラの場所](https://github.com/buildko89/hakowin/releases/download/v1.0.2/hakoCore-win_v1.0.2.zip)
+[箱庭コア機能インストーラのzipファイル](https://github.com/buildko89/hakowin/releases/download/v1.0.2/hakoCore-win_v1.0.2.zip)
 
 # 3. 箱庭コア機能のインストール
 
