@@ -28,6 +28,7 @@
 
 `箱庭Avatar起動`ボタンをクリックするとUnity版のビジュアライズ画面が表示されます。Unityアプリケーションの`START`ボタンをクリックします。`START`ボタンをクリックすると箱庭ドローンシミュレータが開始されます。
 
+![Avatar操作](./common/unity1.png)
 
 `箱庭PythonAPI起動`ボタンをクリックするとサンプルアプリのPythonがPowershellで起動されます。サンプルアプリが開始されると、UnityアプリケーションでPython APIを使ったドローン飛行の体験ができます。
 
