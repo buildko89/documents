@@ -7,16 +7,38 @@ theme:
 
 nav:
   - Home: index.md
-  - Windows Installer: 
-      - インストーラ開発: WinInstller_DevDocuments/windows_hakowin_installer_develop.md
-  - 箱庭ドローン:
-      - 概要: hakodoc/README.md
-      - 事前準備:
-          - インストール概要: hakodoc/preinstall-doc/README.md
-          - WSL設定: hakodoc/preinstall-doc/wsl_install.md
-          - Python設定: hakodoc/preinstall-doc/python_install.md
+  - Windows向けインストーラドキュメント: 
+      - Windowsインストーラ開発ドキュメント: WinInstller_DevDocuments/windows_hakowin_installer_develop.md
+  - 箱庭ドローンシミュレータドキュメント:
+      - ドキュメント構成説明: hakodoc/README.md
+      - 事前インストール手順:
+          - 箱庭インストール概要: hakodoc/preinstall-doc/README.md
+          - WSLインストール手順: hakodoc/preinstall-doc/wsl_install.md
+          - Pythonインストール手順: hakodoc/preinstall-doc/python_install.md
+          - Imdiskインストール手順: hakodoc/preinstall-doc/lmdisk_install.md
+          - QGCインストール手順: hakodoc/preinstall-doc/qgc_install.md
+          - godotインストール手順: hakodoc/preinstall-doc/godot.md
+          - Unityインストール手順: hakodoc/preinstall-doc/unity_install.md
+          - unreal engineインストール手順: hakodoc/preinstall-doc/unrealengine.md
+      - 事前設定手順:
+          - QGC事前設定手順: hakodoc/presetting-doc/qgc_setting.md
+      - Windows OS向けインストール手順:
+          - 箱庭コア機能インストール手順: hakodoc/wininstall-doc/coreinstall.md
+          - 箱庭ドローンシミュレータアプリケーションインストール手順: hakodoc/wininstall-doc/appinstall.md
+      - Windows OS向けアプリケーション利用手順:
+          - 箱庭ドローンシミュレータPython APIアプリケーション: hakodoc/winapps-doc/hakoapi.md
+          - 箱庭ドローンシミュレータゲームパッド操作アプリケーション: hakodoc/winapps-doc/hakorc.md
       - 開発者ドキュメント:
-          - PX4ビルド: hakodoc/developer-doc/px4-doc/px4_build.md
-          - Unityビルド: hakodoc/developer-doc/unity-doc/hako_unitybuild.md
+          - PX4ビルド手順: hakodoc/developer-doc/px4-doc/px4_build.md
+          - Unityビルド手順: hakodoc/developer-doc/unity-doc/hako_unitybuild.md
+          - Unity LiDAR可視化手順: hakodoc/developer-doc/unity-doc/unityLiDARapps.md
+          - Unity QuestGamePad利用手順: hakodoc/developer-doc/unity-doc/unityQuestGamepad.md
+          - Unity 解像度設定手順: hakodoc/developer-doc/unity-doc/unityResolutionSettings.md
+          - mujocoインストール手順: hakodoc/developer-doc/mujoco-doc/hako_libinst.md
+          - Unreal Engineビルド手順: hakodoc/developer-doc/unreal_engine-doc/unreal_engine_build.md
+          - Ubuntu24.04 箱庭コア利用手順: hakodoc/developer-doc/ubuntu-doc/ubuntu24.04hakocore.md
+          - Ubuntu24.04 箱庭ドローンシミュレータ利用手順: hakodoc/developer-doc/ubuntu-doc/ubuntu24.04hakodrone.md
+          - ゲームパッドデバッグ手順: hakodoc/developer-doc/rc-doc/rcdebug.md
       - 使い方:
-          - PX4連携: hakodoc/howto-doc/hakowithpx4.md
+          - Ubuntu24.04 PX4連携操作手順: hakodoc/howto-doc/hakowithpx4.md
+          - Windows OS Godot利用手順: hakodoc/howto-doc/hakowithgodot.md
