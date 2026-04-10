@@ -24,7 +24,7 @@ nav:
           - QGC事前設定手順: hakodoc/presetting-doc/qgc_setting.md
       - Windows OS向けインストール手順:
           - 箱庭コア機能インストール手順: hakodoc/wininstall-doc/coreinstall.md
-          - 箱庭ドローンシミュレータアプリケーションインストール手順: hakodoc/wininstall-doc/appinstall.md
+          - 箱庭ドローンシミュレータアプリケーションインストール手順: hakodoc/wininstall-doc/appsinstall.md
       - Windows OS向けアプリケーション利用手順:
           - 箱庭ドローンシミュレータPython APIアプリケーション: hakodoc/winapps-doc/hakoapi.md
           - 箱庭ドローンシミュレータゲームパッド操作アプリケーション: hakodoc/winapps-doc/hakorc.md
@@ -32,7 +32,7 @@ nav:
           - PX4ビルド手順: hakodoc/developer-doc/px4-doc/px4_build.md
           - Unityビルド手順: hakodoc/developer-doc/unity-doc/hako_unitybuild.md
           - Unity LiDAR可視化手順: hakodoc/developer-doc/unity-doc/unityLiDARapps.md
-          - Unity QuestGamePad利用手順: hakodoc/developer-doc/unity-doc/unityQuestGamepad.md
+          - Unity QuestGamePad利用手順: hakodoc/developer-doc/unity-doc/unityQuestappsGamepad.md
           - Unity 解像度設定手順: hakodoc/developer-doc/unity-doc/unityResolutionSettings.md
           - mujocoインストール手順: hakodoc/developer-doc/mujoco-doc/hako_libinst.md
           - Unreal Engineビルド手順: hakodoc/developer-doc/unreal_engine-doc/unreal_engine_build.md
