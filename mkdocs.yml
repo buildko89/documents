@@ -1,0 +1,22 @@
+site_name: buildko89 Documents
+theme:
+  name: material
+  features:
+    - navigation.expand  # メニューを最初から展開しておく（お好みで）
+    - navigation.tabs    # 上部にタブメニューを表示する（お好みで）
+
+nav:
+  - Home: index.md
+  - Windows Installer: 
+      - インストーラ開発: WinInstller_DevDocuments/windows_hakowin_installer_develop.md
+  - 箱庭ドローン:
+      - 概要: hakodoc/README.md
+      - 事前準備:
+          - インストール概要: hakodoc/preinstall-doc/README.md
+          - WSL設定: hakodoc/preinstall-doc/wsl_install.md
+          - Python設定: hakodoc/preinstall-doc/python_install.md
+      - 開発者ドキュメント:
+          - PX4ビルド: hakodoc/developer-doc/px4-doc/px4_build.md
+          - Unityビルド: hakodoc/developer-doc/unity-doc/hako_unitybuild.md
+      - 使い方:
+          - PX4連携: hakodoc/howto-doc/hakowithpx4.md
