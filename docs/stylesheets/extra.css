@@ -1,0 +1,15 @@
+/* トップページ (index.md) のサイドメニューと目次を消す */
+[data-md-main-steps="index.md"] .md-sidebar {
+    display: none;
+}
+
+/* 箱庭ドローンのトップ (hakodoc/README.md) のサイドメニューを消す */
+[data-md-main-steps="hakodoc/README.md"] .md-sidebar {
+    display: none;
+}
+
+/* メインコンテンツを中央に寄せる（メニューを消した後の余白調整） */
+[data-md-main-steps="index.md"] .md-content {
+    margin-right: auto;
+    margin-left: auto;
+}

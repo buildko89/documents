@@ -10,9 +10,6 @@
     </p>
 </div>
 
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
-
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">目次</span></div>
 
 <!-- TOC -->
@@ -30,13 +27,7 @@
 
 <!-- /TOC -->
 
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
-
-
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">用語集・改版履歴</span></div>
-
 
 |略語|用語|意味|
 |:---|:---|:---|
@@ -48,9 +39,6 @@
 |1|2026/01/02|0.1|新規|新規作成|
 |2|2026/01/27|0.2|変更|インストール手順の変更|
 ||||||
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
 
 # 1. 本ドキュメントについて
 

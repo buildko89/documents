@@ -41,11 +41,6 @@
 
 <!-- /TOC -->
 
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
-
-
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">用語集・改版履歴</span></div>
 
 
@@ -59,9 +54,6 @@
 |1|2024/08/27|0.1|新規|新規作成|
 ||||||
 ||||||
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
 
 # 1. 本ドキュメントについて
 

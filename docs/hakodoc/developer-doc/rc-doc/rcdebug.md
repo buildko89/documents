@@ -13,9 +13,6 @@
     </p>
 </div>
 
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
-
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">目次</span></div>
 <!-- TOC -->
 
@@ -36,9 +33,6 @@
     - [3.2.2. ボタン操作の設定例](#322-ボタン操作の設定例)
 
 <!-- /TOC -->
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
-
 
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">用語集・改版履歴</span></div>
 
@@ -53,9 +47,6 @@
 |1|2024/08/16|0.1|新規|新規作成|
 |2|2024/09/09|0.2|追加|JSON設定時のindex値のデバッグ方法追加|
 ||||||
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
 
 # 1. 本ドキュメントについて
 

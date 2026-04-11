@@ -1,9 +1,3 @@
----
-hide:
-  - navigation  # これで左側のサイドメニューが消えます
-  - toc         # これで右側の目次も消えます（任意）
----
-
 <div class="box-title">
     <p>
     <div style="font-size:18pt;font-weight:bold;text-align:center;margin-top:150px"><span class="title">箱庭ドローンシミュレータ 準備編</span></div>
@@ -26,11 +20,6 @@ hide:
   - [1.3. Windows上での箱庭ドローンシミュレータ必要な環境](#13-windows上での箱庭ドローンシミュレータ必要な環境)
 
 <!-- /TOC -->
-
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
-
 
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">用語集・改版履歴</span></div>
 

@@ -1,44 +1,16 @@
 site_name: buildko89 Documents
 theme:
   name: material
+  custom_dir: overrides  # カスタム設定を置くフォルダ
   features:
-    - navigation.expand  # メニューを最初から展開しておく（お好みで）
-    - navigation.tabs    # 上部にタブメニューを表示する（お好みで）
+    - navigation.expand
+    - navigation.tabs
 
-nav:
-  - Home: index.md
-  - Windows向けインストーラドキュメント: 
-      - Windowsインストーラ開発ドキュメント: WinInstller_DevDocuments/windows_hakowin_installer_develop.md
-  - 箱庭ドローンシミュレータドキュメント:
-      - hakodoc/README.md
-      - 事前インストール手順:
-          - 箱庭インストール概要: hakodoc/preinstall-doc/README.md
-          - WSLインストール手順: hakodoc/preinstall-doc/wsl_install.md
-          - Pythonインストール手順: hakodoc/preinstall-doc/python_install.md
-          - Imdiskインストール手順: hakodoc/preinstall-doc/lmdisk_install.md
-          - QGCインストール手順: hakodoc/preinstall-doc/qgc_install.md
-          - godotインストール手順: hakodoc/preinstall-doc/godot.md
-          - Unityインストール手順: hakodoc/preinstall-doc/unity_install.md
-          - unreal engineインストール手順: hakodoc/preinstall-doc/unrealengine.md
-      - 事前設定手順:
-          - QGC事前設定手順: hakodoc/presetting-doc/qgc_setting.md
-      - Windows OS向けインストール手順:
-          - 箱庭コア機能インストール手順: hakodoc/wininstall-doc/coreinstall.md
-          - 箱庭ドローンシミュレータアプリケーションインストール手順: hakodoc/wininstall-doc/appsinstall.md
-      - Windows OS向けアプリケーション利用手順:
-          - 箱庭ドローンシミュレータPython APIアプリケーション: hakodoc/winapps-doc/hakoapi.md
-          - 箱庭ドローンシミュレータゲームパッド操作アプリケーション: hakodoc/winapps-doc/hakorc.md
-      - 開発者ドキュメント:
-          - PX4ビルド手順: hakodoc/developer-doc/px4-doc/px4_build.md
-          - Unityビルド手順: hakodoc/developer-doc/unity-doc/hako_unitybuild.md
-          - Unity LiDAR可視化手順: hakodoc/developer-doc/unity-doc/unityLiDARapps.md
-          - Unity QuestGamePad利用手順: hakodoc/developer-doc/unity-doc/unityQuestappsGamepad.md
-          - Unity 解像度設定手順: hakodoc/developer-doc/unity-doc/unityResolutionSettings.md
-          - mujocoインストール手順: hakodoc/developer-doc/mujoco-doc/hako_libinst.md
-          - Unreal Engineビルド手順: hakodoc/developer-doc/unreal_engine-doc/unreal_engine_build.md
-          - Ubuntu24.04 箱庭コア利用手順: hakodoc/developer-doc/ubuntu-doc/ubuntu24.04hakocore.md
-          - Ubuntu24.04 箱庭ドローンシミュレータ利用手順: hakodoc/developer-doc/ubuntu-doc/ubuntu24.04hakodrone.md
-          - ゲームパッドデバッグ手順: hakodoc/developer-doc/rc-doc/rcdebug.md
-      - 使い方:
-          - Ubuntu24.04 PX4連携操作手順: hakodoc/howto-doc/hakowithpx4.md
-          - Windows OS Godot利用手順: hakodoc/howto-doc/hakowithgodot.md
+# プラグインの設定
+plugins:
+  - search
+  - awesome-pages  # これでフォルダ構成が自動的にメニューになります
+
+# 外部CSSの登録
+extra_css:
+  - stylesheets/extra.css
