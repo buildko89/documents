@@ -3,6 +3,7 @@ hide:
   - navigation  # これで左側のサイドメニューが消えます
   - toc         # これで右側の目次も消えます（任意）
 ---
+
 # 箱庭ドローンシミュレータ Windows環境へのインストール手順
 
 箱庭ドローンシミュレータを利用するためにWindows環境で箱庭ドローンシミュレータを操作するアプリケーションソフトウェアのドキュメントとなります。
@@ -16,11 +17,11 @@ hide:
 
 # Visual Studio Communityのライセンスについて
 
-本アプリケーションは、Microsoft社のVisual Studio Community 2022をベースにして作成しています。配布などは、Microsoft社のライセンス条項に則り、個人開発者として作成しています。
+本インストーラは、Microsoft社のVisual Studio Community 2022をベースにして作成しています。配布などは、Microsoft社のライセンス条項に則り、個人開発者として作成しています。
 
 [Microsoft社ライセンス条項](https://visualstudio.microsoft.com/ja/license-terms/vs2022-ga-community/)
 
-本アプリケーションは、以下の目的以外の利用を避けてください。
+本インストーラは、以下の目的以外の利用を避けてください。
 
 ‐ アプリケーションを開発する個人開発者であること
 
