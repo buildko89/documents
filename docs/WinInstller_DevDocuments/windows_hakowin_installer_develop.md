@@ -67,7 +67,7 @@
 
 |No|対象|内容|
 |:---|:---|:---|
-|1|OS|Windows10/11|
+|1|OS|Windows10/11|Previwe
 |2|PC|64bit環境|
 |3|PC|Corei7 9th以降|
 |4|PC|32Gbyteのメモリ推奨|
