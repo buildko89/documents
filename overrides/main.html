@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {# トップページ、または特定のページのサイドバーを隠す設定 #}
+  {% if page.is_homepage or page.url == "docs/" %}
+  <style>
+    /* 左のナビゲーションを隠す */
+    .md-sidebar--primary { display: none; }
+    /* 右の目次(TOC)を隠す */
+    .md-sidebar--secondary { display: none; }
+    /* コンテンツを中央に寄せ、幅を調整する */
+    .md-content { margin-right: auto; margin-left: auto; }
+  </style>
+  {% endif %}
+{% endblock %}
+
