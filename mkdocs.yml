@@ -10,7 +10,7 @@ nav:
   - Windows向けインストーラドキュメント: 
       - Windowsインストーラ開発ドキュメント: WinInstller_DevDocuments/windows_hakowin_installer_develop.md
   - 箱庭ドローンシミュレータドキュメント:
-      - ドキュメント構成説明: hakodoc/README.md
+      - hakodoc/README.md
       - 事前インストール手順:
           - 箱庭インストール概要: hakodoc/preinstall-doc/README.md
           - WSLインストール手順: hakodoc/preinstall-doc/wsl_install.md
