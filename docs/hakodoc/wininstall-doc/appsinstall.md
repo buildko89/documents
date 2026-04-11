@@ -79,7 +79,7 @@ RAM Diskが正しく設定できていない場合、以下のようなエラー
 
 ![箱庭ドローンシミュレータサンプルトラブルシュート2](./apps/troubleshooting2.png)
 
-この場合、RAM Diskの設定を見直すため、 [1.2.1. RAM Disk環境について](#121-RAM-Disk環境について)の手順を良く見直して、設定を確認してください。
+この場合、RAM Diskの設定を見直すため、 [RAM Diskのインストール手順](../preinstall-doc/lmdisk_install.md#1-ram-disk環境について)を良く見直して、設定を確認してください。
 
 
 ## 4.3. PythonのVersionが3.12となってない場合

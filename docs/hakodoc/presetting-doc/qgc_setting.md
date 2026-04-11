@@ -15,9 +15,9 @@
 <!-- TOC -->
 
 - [1. QGCの通信リンクの設定](#1-qgcの通信リンクの設定)
-  - [1.1. QGCの起動](#11-qgcの起動)
-    - [1.1.1. Application Settingの設定](#111-application-settingの設定)
-      - [1.1.1.1. WSL2のIPアドレスの確認について](#1111-wsl2のipアドレスの確認について)
+    - [1.1. QGCの起動](#11-qgcの起動)
+        - [1.1.1. Application Settingの設定](#111-application-settingの設定)
+            - [1.1.1.1. WSL2のIPアドレスの確認について](#1111-wsl2のipアドレスの確認について)
 
 <!-- /TOC -->
 
