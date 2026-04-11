@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation  # これで左側のサイドメニューが消えます
+  - toc         # これで右側の目次も消えます（任意）
+---
+
 <div class="box-title">
     <p>
     <div style="font-size:18pt;font-weight:bold;text-align:center;margin-top:150px"><span class="title">箱庭ドローンシミュレータ 準備編</span></div>
@@ -9,9 +15,6 @@
     <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">箱庭ラボコミュニティ</span></div>
     </p>
 </div>
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
 
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">目次</span></div>
 

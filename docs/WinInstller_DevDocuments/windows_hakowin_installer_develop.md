@@ -6,15 +6,12 @@
     <div style="font-size:14pt;font-weight:bold;text-align:center;margin-top:20px"><span class="sub-title">Visual Studio 2022 Community版を利用したインストーラ開発編</span></div>
     </p>
     <p>
-    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">ドローンWG</span></div>
+    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:500px"><span class="author">箱庭ラボコミュニティ</span></div>
     </p>
     <p>
     <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:10px"><span class="date">2024年08月29日</span></div>
     </p>
 </div>
-
-<!-- 改ページ -->
-<div style="page-break-before:always"></div>
 
 <div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">目次</span></div>
 <!-- TOC -->
