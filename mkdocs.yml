@@ -14,3 +14,7 @@ plugins:
 # 外部CSSの登録
 extra_css:
   - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - ...

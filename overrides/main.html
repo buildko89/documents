@@ -1,16 +1,32 @@
 {% extends "base.html" %}
 
 {% block extrahead %}
-  {# トップページ、または特定のページのサイドバーを隠す設定 #}
-  {% if page.is_homepage or page.url == "docs/" %}
   <style>
-    /* 左のナビゲーションを隠す */
-    .md-sidebar--primary { display: none; }
-    /* 右の目次(TOC)を隠す */
-    .md-sidebar--secondary { display: none; }
-    /* コンテンツを中央に寄せ、幅を調整する */
-    .md-content { margin-right: auto; margin-left: auto; }
+    /* =========================================
+       1. 全ページ共通の設定
+       ========================================= */
+    /* 左側のナビゲーション（インデックス）を全ページで非表示にする */
+    .md-sidebar--primary {
+      display: none !important;
+    }
+
+    /* =========================================
+       2. トップページ専用の設定
+       ========================================= */
+    {% if page and (page.is_homepage or page.file.src_path == "hakodoc/README.md") %}
+    /* 右側の目次（TOC）も非表示にする */
+    .md-sidebar--secondary {
+      display: none !important;
+    }
+    /* コンテンツの幅を広げて中央に配置する */
+    .md-content {
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+    .md-main__inner {
+      display: block !important;
+    }
+    {% endif %}
   </style>
-  {% endif %}
 {% endblock %}
 
