@@ -9,7 +9,7 @@
 
 Visual Studio 2022 CommunityのSetupプロジェクトを利用したWindows用のインストーラ開発用のドキュメント
 
-* [Windows OSインストーラ開発ドキュメント](WinInstaller_DevDocuments/windows_hakowin_installer_develop.md)
+* [Windows OSインストーラ開発ドキュメント](WinInstller_DevDocuments/windows_hakowin_installer_develop.md)
 
 ## 箱庭ドローンシミュレータ関連
 
