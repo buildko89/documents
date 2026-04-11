@@ -17,7 +17,10 @@ extra_css:
 
 markdown_extensions:
   - toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
       permalink: true
+      baselevel: 1
+      toc_depth: 4
 
 nav:
   - Home: index.md

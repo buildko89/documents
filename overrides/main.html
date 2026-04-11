@@ -10,22 +10,34 @@
       display: none !important;
     }
 
+    /* メインコンテンツを正しく配置し、右側のTOCを右側に固定する */
+    .md-content {
+      margin-left: 0 !important; /* 左側の空白を詰める */
+    }
+
+    /* グリッドを調整してTOCを右端に維持 */
+    .md-main__inner {
+      display: flex !important;
+      justify-content: flex-end !important; /* コンテンツとTOCを全体として右寄りに配置 */
+    }
+
+    .md-content {
+      flex-grow: 1;
+      max-width: 100% !important; /* 100%に広げる */
+    }
+
+    .md-sidebar--secondary {
+      position: sticky !important;
+      top: 3.2rem;
+      width: 12.1rem;
+      flex-shrink: 0; /* TOCの幅を維持 */
+    }
+
     /* =========================================
        2. トップページ専用の設定
        ========================================= */
     {% if page and (page.is_homepage or page.file.src_path == "hakodoc/README.md") %}
-    /* 右側の目次（TOC）も非表示にする */
-    .md-sidebar--secondary {
-      display: none !important;
-    }
-    /* コンテンツの幅を広げて中央に配置する */
-    .md-content {
-      max-width: 100% !important;
-      margin: 0 auto !important;
-    }
-    .md-main__inner {
-      display: block !important;
-    }
+    /* 特別の設定が必要な場合はここに記述 */
     {% endif %}
   </style>
 {% endblock %}

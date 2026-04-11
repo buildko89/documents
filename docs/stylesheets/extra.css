@@ -1,10 +1,5 @@
-/* トップページ (index.md) のサイドメニューと目次を消す */
-[data-md-main-steps="index.md"] .md-sidebar {
-    display: none;
-}
-
 /* 箱庭ドローンのトップ (hakodoc/README.md) のサイドメニューを消す */
-[data-md-main-steps="hakodoc/README.md"] .md-sidebar {
+[data-md-main-steps="hakodoc/README.md"] .md-sidebar--primary {
     display: none;
 }
 
