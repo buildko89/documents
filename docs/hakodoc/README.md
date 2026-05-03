@@ -99,3 +99,9 @@ Unral Engineを利用する場合のドキュメントとなります。
 新規にゲームパッドを設定したい場合の手順となります。
 
 * [ゲームパッドデバッグ手順](developer-doc/rc-doc/rcdebug.md)
+
+### 🖥️ Visual Studio関連
+
+箱庭関連のリポジトリを`Windows 11+Visual Studio Community 2022`を使ってビルドするときのテクニックと忘備録になります。
+
+* [Visual Studio Community 2022ビルド](developer-doc/visualstudio-doc/visualstudio.md)
