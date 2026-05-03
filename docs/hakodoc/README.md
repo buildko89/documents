@@ -104,4 +104,4 @@ Unral Engineを利用する場合のドキュメントとなります。
 
 箱庭関連のリポジトリを`Windows 11+Visual Studio Community 2022`を使ってビルドするときのテクニックと忘備録になります。
 
-* [Visual Studio Community 2022ビルド](developer-doc/visualstudio-doc/visualstudio.md)
+* [Visual Studio Community 2022ビルド(core pro編)](developer-doc/visualstudio-doc/visualstudio_corepro.md)
