@@ -4,13 +4,13 @@
 
 以下のドキュメントを参照して、事前にインストールしておいてください。
 
-[箱庭コア機能のインストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/wininstall-doc/coreinstall.md)
+[箱庭コア機能のインストール手順](https://github.com/buildko89/documents/blob/main/docs/hakodoc/wininstall-doc/coreinstall.md)
 
 lmdisk、Ptython 3.12は箱庭コア機能のインストール時にインストールが済んでいるなら以下の手順は不要になります。
 
-[lmdiskインストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/lmdisk_install.md)
+[lmdiskインストール手順](https://github.com/buildko89/documents/blob/main/docs/hakodoc/preinstall-doc/lmdisk_install.md)
 
-[Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)
+[Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/docs/hakodoc/preinstall-doc/python_install.md)
 
 **pythonは、3.12以外のバージョンでは動作しないため注意してください。**
 

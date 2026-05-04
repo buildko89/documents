@@ -3,9 +3,9 @@
 箱庭アプリをインストールするには、箱庭コア機能、lmdisk、Python 3.12のインストールが終わっていることが条件となります。
 以下のドキュメントを参照して、事前にインストールしておいてください。
 
-[lmdiskインストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/lmdisk_install.md)
+[lmdiskインストール手順](https://github.com/buildko89/documents/blob/main/docs/hakodoc/preinstall-doc/lmdisk_install.md)
 
-[Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/hakodoc/preinstall-doc/python_install.md)
+[Python3.12インストール手順](https://github.com/buildko89/documents/blob/main/docs/hakodoc/preinstall-doc/python_install.md)
 
 **pythonは、3.12以外のバージョンでは動作しないため注意してください。**
 
