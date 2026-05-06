@@ -1,0 +1,2738 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../px4-doc/px4_build/">
+      
+      
+        <link rel="next" href="../../ubuntu-doc/ubuntu24.04hakocore/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Rcdebug - buildko89 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* =========================================
+       1. 全ページ共通の設定
+       ========================================= */
+    /* 左側のナビゲーション（インデックス）を全ページで非表示にする */
+    .md-sidebar--primary {
+      display: none !important;
+    }
+
+    /* メインコンテンツを正しく配置し、右側のTOCを右側に固定する */
+    .md-content {
+      margin-left: 0 !important; /* 左側の空白を詰める */
+    }
+
+    /* グリッドを調整してTOCを右端に維持 */
+    .md-main__inner {
+      display: flex !important;
+      justify-content: flex-end !important; /* コンテンツとTOCを全体として右寄りに配置 */
+    }
+
+    .md-content {
+      flex-grow: 1;
+      max-width: 100% !important; /* 100%に広げる */
+    }
+
+    .md-sidebar--secondary {
+      position: sticky !important;
+      top: 3.2rem;
+      width: 12.1rem;
+      flex-shrink: 0; /* TOCの幅を維持 */
+    }
+
+    /* =========================================
+       2. トップページ専用の設定
+       ========================================= */
+    
+  </style>
+
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-本ドキュメントについて" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="buildko89 Documents" class="md-header__button md-logo" aria-label="buildko89 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            buildko89 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rcdebug
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../WinInstller_DevDocuments/windows_hakowin_installer_develop/" class="md-tabs__link">
+          
+  
+  
+  Windows OSインストーラ開発ドキュメント
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  箱庭ドローンシミュレータのドキュメント
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="buildko89 Documents" class="md-nav__button md-logo" aria-label="buildko89 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    buildko89 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows OSインストーラ開発ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows OSインストーラ開発ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../WinInstller_DevDocuments/windows_hakowin_installer_develop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows hakowin installer develop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箱庭ドローンシミュレータのドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    箱庭ドローンシミュレータのドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箱庭ドローンシミュレータ用のドキュメント
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mujoco doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mujoco doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mujoco-doc/hako_libinst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 本ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Px4 doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Px4 doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../px4-doc/px4_build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Px4 build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rc doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rc doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rcdebug
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rcdebug
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-対象環境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. 対象環境
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ubuntu doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-doc/ubuntu24.04hakocore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu24.04hakocore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-doc/ubuntu24.04hakodrone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu24.04hakodrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unity doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unity-doc/hako_unitybuild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hako unitybuild
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unity-doc/unityLiDARapps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    unityLiDARapps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unity-doc/unityQuestappsGamepad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    unityQuestappsGamepad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unity-doc/unityResolutionSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    unityResolutionSettings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unreal engine doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unreal engine doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unreal_engine-doc/unreal_engine_build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箱庭でのUnreal Engine利用について
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_7" id="__nav_3_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualstudio doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visualstudio doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualstudio-doc/visualstudio_corepro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箱庭関連のリポジトリをVisual Studioでビルドするテクニック集(Core Pro編)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualstudio-doc/visualstudio_vcpkg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualstudio vcpkg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Howto doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Howto doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../howto-doc/hakowithgodot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 本ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../howto-doc/hakowithpx4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hakowithpx4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preinstall doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Preinstall doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/godot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Godotの利用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/lmdisk_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lmdisk install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/python_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/qgc_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qgc install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/unity_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/unrealengine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unrealengine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preinstall-doc/wsl_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wsl install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presetting doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Presetting doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../presetting-doc/qgc_setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qgc setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Winapps doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Winapps doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../winapps-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箱庭ドローンシミュレータ Windows環境へのインストール手順
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../winapps-doc/hakoapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 箱庭ドローンシミュレータ hakoWinAppsAPI.exe 操作方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../winapps-doc/hakorc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 箱庭ドローンシミュレータ hakoWinAppsRC.exe 操作方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wininstall doc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wininstall doc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wininstall-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箱庭ドローンシミュレータ Windows環境へのインストール手順
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wininstall-doc/appsinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 前提条件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wininstall-doc/coreinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 前提条件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-対象環境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. 対象環境
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="box-title">
+    <p>
+    <div style="font-size:18pt;font-weight:bold;text-align:center;margin-top:150px"><span class="title">箱庭ドローンシミュレータ コントローラ設定</span></div>
+    </p>
+    <p>
+    <div style="font-size:14pt;font-weight:bold;text-align:center;margin-top:20px"><span class="sub-title">コントローラ設定とデバッグ編</span></div>
+    </p>
+    <p>
+    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:100px"><span class="author">箱庭ラボコミュニティ</span></div>
+    </p>
+    <p>
+    <div style="font-size:12pt;font-weight:bold;text-align:center;margin-top:10px"><span class="date">2024年09月08日</span></div>
+    </p>
+</div>
+
+<div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">目次</span></div>
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-本ドキュメントについて">1. 本ドキュメントについて</a><ul>
+<li><a href="#11-対象環境">1.1. 対象環境</a></li>
+</ul>
+</li>
+<li><a href="#2-箱庭ドローンシミュレータでのコントローラ設定">2. 箱庭ドローンシミュレータでのコントローラ設定</a><ul>
+<li><a href="#21-json形式の設定ファイルの場所">2.1. JSON形式の設定ファイルの場所</a></li>
+<li><a href="#22-json形式の設定ファイルの内容">2.2. JSON形式の設定ファイルの内容</a><ul>
+<li><a href="#221-設定ファイルの内容">2.2.1. 設定ファイルの内容</a><ul>
+<li><a href="#2211-modeインデックスの設定内容">2.2.1.1. modeインデックスの設定内容</a></li>
+<li><a href="#2212-stickインデックスの設定内容">2.2.1.2. stickインデックスの設定内容</a></li>
+<li><a href="#2213-eventインデックスの設定内容">2.2.1.3. Eventインデックスの設定内容</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-箱庭ドローンシミュレータのコントローラ設定方法">3. 箱庭ドローンシミュレータのコントローラ設定方法</a><ul>
+<li><a href="#31-コントローラ操作のデバッグ時の注意点">3.1. コントローラ操作のデバッグ時の注意点</a><ul>
+<li><a href="#311-十字キーの割り当てについて">3.1.1. 十字キーの割り当てについて</a></li>
+</ul>
+</li>
+<li><a href="#32-コントローラ操作のデバッグ方法">3.2. コントローラ操作のデバッグ方法</a><ul>
+<li><a href="#321-ジョイスティックの設定例">3.2.1. ジョイスティックの設定例</a></li>
+<li><a href="#322-ボタン操作の設定例">3.2.2. ボタン操作の設定例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<div style="font-size:18pt;font-weight:bold;text-align:left;"><span class="contents">用語集・改版履歴</span></div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">略語</th>
+<th style="text-align: left;">用語</th>
+<th style="text-align: left;">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">日付</th>
+<th style="text-align: left;">版数</th>
+<th style="text-align: left;">変更種別</th>
+<th style="text-align: left;">変更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2024/08/16</td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">新規</td>
+<td style="text-align: left;">新規作成</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2024/09/09</td>
+<td style="text-align: left;">0.2</td>
+<td style="text-align: left;">追加</td>
+<td style="text-align: left;">JSON設定時のindex値のデバッグ方法追加</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="1-本ドキュメントについて">1. 本ドキュメントについて<a class="headerlink" href="#1-本ドキュメントについて" title="Permanent link">&para;</a></h1>
+<p>本ドキュメントは、箱庭ドローンシミュレータで利用するドローン操作用のコントローラの設定に関しての設定方法、デバッグ方法に関するドキュメントとなります。</p>
+<h2 id="11-対象環境">1.1. 対象環境<a class="headerlink" href="#11-対象環境" title="Permanent link">&para;</a></h2>
+<p>本ドキュメントでは、以下の環境を対象としています。</p>
+<p>本ドキュメントでは、以下のOSバージョンとPC環境を想定としています。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">対象</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">OS</td>
+<td style="text-align: left;">Ubuntu 22.04 LTS/Windows10/11</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">PC</td>
+<td style="text-align: left;">64bit環境</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">PC</td>
+<td style="text-align: left;">Corei7 9th以降</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">PC</td>
+<td style="text-align: left;">32Gbyteのメモリ推奨</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">PC</td>
+<td style="text-align: left;">SSD 512Gbyte以上</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">PC</td>
+<td style="text-align: left;">Graphicsアクセラレータ推奨</td>
+</tr>
+</tbody>
+</table>
+<h1 id="2-箱庭ドローンシミュレータでのコントローラ設定">2. 箱庭ドローンシミュレータでのコントローラ設定<a class="headerlink" href="#2-箱庭ドローンシミュレータでのコントローラ設定" title="Permanent link">&para;</a></h1>
+<p>箱庭ドローンシミュレータでは、多種多様なコントローラを利用できるように設定をJSON形式のファイルとして提供しています。
+以降の解説では、ubuntuの場合は、ubuntu環境のホームディレクトリ配下のworkディレクトリに箱庭ドローンシミュレータ環境を構築していることを前提として解説をします。Windowsの場合は、<code>c:\Users\”User名”\source\repo</code>に箱庭ドローンシミュレータ環境を構築していることを前提としています。</p>
+<h2 id="21-json形式の設定ファイルの場所">2.1. JSON形式の設定ファイルの場所<a class="headerlink" href="#21-json形式の設定ファイルの場所" title="Permanent link">&para;</a></h2>
+<p>以下のディレクトリにJSONファイル形式の設定ファイルがあります。</p>
+<ul>
+<li>Ubuntuの場合</li>
+</ul>
+<p>bashを起動してください。</p>
+<pre><code class="language-bash">$ ls work/hakoniwa-px4sim/drone_api/sample/rc_config/
+FS-i6S.json Nintendo-ProControl-win.json  hori4mini-control-win.json  ps4-control.json Nintendo-ProControl-lnx.json hori4mini-control-lnx.json    ps4-control-lnx.json ps5-control-lnx.json
+</code></pre>
+<p>― Windows10/11の場合</p>
+<p>Powershellを起動してください。</p>
+<pre><code class="language-pwoershell">PS C:\Users\buildman\source\repos\hakoniwa-px4sim &gt; ls .\drone_api\sample\rc_config\
+
+    Directory: C:\Users\buildman\source\repos\hakoniwa-px4sim\drone_api\sample\rc_config
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          2024/09/08    15:00           1554 FS-i6S.json
+-a---          2024/09/08    15:00           2002 hori4mini-control-lnx.json
+-a---          2024/09/08    16:02           2004 hori4mini-control-win.json
+-a---          2024/09/08    15:00           2001 Nintendo-ProControl-lnx.json
+-a---          2024/09/08    16:02           2003 Nintendo-ProControl-win.json
+-a---          2024/09/08    15:00           2005 ps4-control-lnx.json
+-a---          2024/09/08    15:00           2004 ps4-control.json
+-a---          2024/09/08    16:02           2005 ps5-control-lnx.json
+</code></pre>
+<h2 id="22-json形式の設定ファイルの内容">2.2. JSON形式の設定ファイルの内容<a class="headerlink" href="#22-json形式の設定ファイルの内容" title="Permanent link">&para;</a></h2>
+<p>JSONファイルで設定できる内容を解説します。例として、PS4互換のHORI PAD4 miniのコントローラを例に解説します。</p>
+<h3 id="221-設定ファイルの内容">2.2.1. 設定ファイルの内容<a class="headerlink" href="#221-設定ファイルの内容" title="Permanent link">&para;</a></h3>
+<p>設定ファイル内容を見ていきましょう。設定ファイルではコントローラのボタンやJOYスティックなどのボタンの割り当てを設定することができます。</p>
+<ul>
+<li>hori4mini-control-lnx.jsonファイルの中身</li>
+</ul>
+<pre><code class="language-JSON">{
+    &quot;Os&quot;: [ &quot;Darwin&quot; ],
+    &quot;mode&quot;: 2,
+    &quot;stick&quot;: {
+        &quot;Left&quot;: {
+            &quot;UD&quot;: {
+                &quot;index&quot;: 1,
+                &quot;average&quot;: true,
+                &quot;valueInverse&quot;: false,
+                &quot;conversion&quot;: {
+                    &quot;paramA&quot;: 0.9,
+                    &quot;paramB&quot;: 0.1,
+                    &quot;paramC&quot;: 0.0
+                }
+            },
+            &quot;LR&quot;: {
+                &quot;index&quot;: 0,
+                &quot;average&quot;: true,
+                &quot;valueInverse&quot;: false,
+                &quot;conversion&quot;: {
+                    &quot;paramA&quot;: 0.9,
+                    &quot;paramB&quot;: 0.1,
+                    &quot;paramC&quot;: 0.0
+                }
+            }
+        },
+        &quot;Right&quot;: {
+            &quot;UD&quot;: {
+                &quot;index&quot;: 5,
+                &quot;average&quot;: true,
+                &quot;valueInverse&quot;: false,
+                &quot;conversion&quot;: {
+                    &quot;paramA&quot;: 0.9,
+                    &quot;paramB&quot;: 0.1,
+                    &quot;paramC&quot;: 0.0
+                }
+            },
+            &quot;LR&quot;: {
+                &quot;index&quot;: 2,
+                &quot;average&quot;: true,
+                &quot;valueInverse&quot;: false,
+                &quot;conversion&quot;: {
+                    &quot;paramA&quot;: 0.9,
+                    &quot;paramB&quot;: 0.1,
+                    &quot;paramC&quot;: 0.0
+                }
+            }
+        }
+    },
+    &quot;Event&quot;: {
+        &quot;RadioControlEnable&quot;: {
+            &quot;index&quot;: 1,
+            &quot;type&quot;: &quot;switch&quot;,
+            &quot;off&quot;: &quot;up&quot;,
+            &quot;on&quot;: &quot;down&quot;
+        },
+        &quot;Camera&quot;: {
+            &quot;index&quot;: 0,
+            &quot;type&quot;: &quot;push&quot;,
+            &quot;off&quot;: &quot;up&quot;,
+            &quot;on&quot;: &quot;down&quot;
+        },
+        &quot;GrabBaggage&quot;: {
+            &quot;index&quot;: 2,
+            &quot;type&quot;: &quot;toggle&quot;,
+            &quot;off&quot;: &quot;up&quot;,
+            &quot;on&quot;: &quot;down&quot;
+        },
+        &quot;CameraMoveUp&quot;: {
+            &quot;index&quot;: 5,
+            &quot;type&quot;: &quot;switch&quot;,
+            &quot;off&quot;: &quot;up&quot;,
+            &quot;on&quot;: &quot;down&quot;
+        },
+        &quot;CameraMoveDown&quot;: {
+            &quot;index&quot;: 4,
+            &quot;type&quot;: &quot;switch&quot;,
+            &quot;off&quot;: &quot;up&quot;,
+            &quot;on&quot;: &quot;down&quot;
+        }
+
+    }
+}
+</code></pre>
+<p>まずは、インデックス名から見ていきましょう。インデックスは3種類あります。mode,stick,Eventの3種類になります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">インデックス名</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">mode</td>
+<td style="text-align: left;">コントローラや送信機(プロポ)のMODE設定内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">stick</td>
+<td style="text-align: left;">コントローラのJoystickの設定内容</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Event</td>
+<td style="text-align: left;">コントローラの各種ボタン設定内容</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2211-modeインデックスの設定内容">2.2.1.1. modeインデックスの設定内容<a class="headerlink" href="#2211-modeインデックスの設定内容" title="Permanent link">&para;</a></h4>
+<p>modeタグは、コントローラや送信機(プロポ)のMODE設定になります。モードの設定イメージは、下記の画像のイメージになります。</p>
+<p><img alt="コントローラのMODE設定" src="rcdebug1.png" /></p>
+<p>設定値は以下のようになります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">設定値</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">モード1の設定</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">モード2の設定</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2212-stickインデックスの設定内容">2.2.1.2. stickインデックスの設定内容<a class="headerlink" href="#2212-stickインデックスの設定内容" title="Permanent link">&para;</a></h4>
+<p>stickインデックスは、コントローラのJoystick部分の上下左右の設定になります。</p>
+<p><img alt="コントローラのJoystick設定1" src="rcdebug2.png" /></p>
+<p>stickのインデックスは、Left(左),Right(右)があり、Left(左),Right(右)それぞれにUD(上下),LR(左右)のインデックスが設定内容としてあります。</p>
+<p><img alt="コントローラのJoystick設定2" src="rcdebug3.png" /></p>
+<p>Left(左),Right(右)のUD(上下),LR(左右)のそれぞれに以下の設定値があります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定値</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">0～5の間の値</td>
+<td style="text-align: left;">Joystickを動かしたときのコントローラから送られるインデックス番号</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">average</td>
+<td style="text-align: left;">true/false</td>
+<td style="text-align: left;">Joystickを動かしたときの平均値を計算することの設定</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">valueInverse</td>
+<td style="text-align: left;">true/false</td>
+<td style="text-align: left;">Joystickを動かしたときの値の反転をする設定</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">conversion</td>
+<td style="text-align: left;">0.0～0.9の間の値</td>
+<td style="text-align: left;">ParamA～ParamCがある。Joystickを動かしたときの調整パラメータ設定</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2213-eventインデックスの設定内容">2.2.1.3. Eventインデックスの設定内容<a class="headerlink" href="#2213-eventインデックスの設定内容" title="Permanent link">&para;</a></h4>
+<p>Eventインデックスは、コントローラの各種ボタンを箱庭ドローンシミュレータが機能として利用するための設定になります。</p>
+<p><img alt="コントローラの各種ボタン設定1" src="rcdebug4.png" /></p>
+<p>Eventインデックスは、箱庭ドローンシミュレータが用意しているPython操作用のAPI定義に従った項目が設定できるようになっています。</p>
+<p><img alt="コントローラの各種ボタン設定2" src="rcdebug5.png" /></p>
+<p>設定値には、RadioControlEnable,Camera,GrabBaggage,CameraMoveUp,CameraMoveDownの5種類の設定があります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">RadioControlEnable</td>
+<td style="text-align: left;">0～12の間の値</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Camera</td>
+<td style="text-align: left;">ドローンカメラ撮影ボタン操作設定</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">GrabBaggage</td>
+<td style="text-align: left;">ドローンの荷物操作用のマグネット操作設定</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">CameraMoveUp</td>
+<td style="text-align: left;">ドローンカメラの上操作設定</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">CameraMoveDown</td>
+<td style="text-align: left;">ドローンカメラの下操作設定</td>
+</tr>
+</tbody>
+</table>
+<p>RadioControlEnable,Camera,GrabBaggage,CameraMoveUp,CameraMoveDownの5種類には、それぞれに以下の設定があります。設定値のindexの値はコントローラによって取れる値が異なるので、現状で把握できている値を記載しています。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No</th>
+<th style="text-align: left;">設定項目</th>
+<th style="text-align: left;">設定値</th>
+<th style="text-align: left;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">index</td>
+<td style="text-align: left;">0～15の間の値</td>
+<td style="text-align: left;">コントローラのボタンを押したときのコントローラから送られるインデックス番号</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">push/toggle/switch</td>
+<td style="text-align: left;">ボタンを押したときの操作設定。push:押したときに操作が有効,toggle:押した回数によって操作内容変更,switch:押したときの操作内容変更</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">off</td>
+<td style="text-align: left;">up/down</td>
+<td style="text-align: left;">ボタンが押されてないときの操作を指定</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">on</td>
+<td style="text-align: left;">up/down</td>
+<td style="text-align: left;">ボタンが押されたときの操作を指定</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-箱庭ドローンシミュレータのコントローラ設定方法">3. 箱庭ドローンシミュレータのコントローラ設定方法<a class="headerlink" href="#3-箱庭ドローンシミュレータのコントローラ設定方法" title="Permanent link">&para;</a></h1>
+<p>Linuxなど各種OSでの操作や、コントローラ種類によって、コントローラのjoystickの操作やボタン操作によって、コントローラから取れる値が異なることがあります。特に各インデックスの設定項目にあるindex部分に設定する値は異なることが多いです。</p>
+<p>現状提供しているJSONファイルでは、利用するコントローラの操作と合わない場合が想定されるため、ここでは、実際にコントローラから取れる値のデバッグ方法を解説します。</p>
+<h2 id="31-コントローラ操作のデバッグ時の注意点">3.1. コントローラ操作のデバッグ時の注意点<a class="headerlink" href="#31-コントローラ操作のデバッグ時の注意点" title="Permanent link">&para;</a></h2>
+<p>rc-custom.pyの仕様上、ジョイスティックとボタンの操作だけが利用できるような仕様になっています。OSやコントローラによって取れる値が違うことがあるため、注意してください。</p>
+<h3 id="311-十字キーの割り当てについて">3.1.1. 十字キーの割り当てについて<a class="headerlink" href="#311-十字キーの割り当てについて" title="Permanent link">&para;</a></h3>
+<p>OSによって、十字キーの割り当てが変わるため、注意が必要です。現状確認ができているのは、LinuxとWindowsでのボタン割り当てが違うことが分かっています。コントローラのデバッグ時には、ジョイスティックとボタン操作で取れる値だけが有効ですので、それ以外の値で取れた場合は、違う操作でジョイスティックとボタン操作の値が取れるものを利用してください。</p>
+<p><img alt="コントローラ操作時の注意" src="rcdebug10.png" /></p>
+<p>上記の例は、十字キーをLinuxとWindowsで操作した場合の例です。Linuxでは、ボタン操作で認識されていないので、十字キーは利用不可となります。一方、Windowsの場合は、ボタン操作として十字キーが認識されるので、利用可能となります。</p>
+<h2 id="32-コントローラ操作のデバッグ方法">3.2. コントローラ操作のデバッグ方法<a class="headerlink" href="#32-コントローラ操作のデバッグ方法" title="Permanent link">&para;</a></h2>
+<p>コントローラのデバッグ用のpythonコードを利用して、コントローラから取れる値を確認することができます。</p>
+<p>― Ubuntuの場合</p>
+<p>bashを起動してください。</p>
+<pre><code class="language-bash">$ cd ~/work/hakoniwa-px4sim/drone_api/sample/rc_debug
+$ python3 rc_control.py
+</code></pre>
+<p>― Windows10/11</p>
+<p>pwoershellを起動してください。</p>
+<pre><code class="language-pwoershell">PS C:\Users\buildman\source\repos\hakoniwa-px4sim\drone_api\sample\rc_debug&gt; python .\rc_control.py
+</code></pre>
+<p>起動すると以下のようにコントローラを認識してくれます。コントローラの名前、コントローラ上のボタン数が確認できます。</p>
+<p><img alt="コントローラのデバッグ1" src="rcdebug6.png" /></p>
+<p>起動ができたら、実際にコントローラを操作してみましょう。ボタンのインデックス値、Joystickのインデックス値などを確認して、箱庭ドローンシミュレータ用の設定ファイルに反映することで、コントローラを反映することができます。</p>
+<p><img alt="コントローラのデバッグ2" src="rcdebug7.png" /></p>
+<h3 id="321-ジョイスティックの設定例">3.2.1. ジョイスティックの設定例<a class="headerlink" href="#321-ジョイスティックの設定例" title="Permanent link">&para;</a></h3>
+<p>rc_control.pyを利用して、取れた値は、JSONファイルのindexに設定すると有効になります。</p>
+<p><img alt="コントローラのデバッグ3" src="rcdebug8.png" /></p>
+<h3 id="322-ボタン操作の設定例">3.2.2. ボタン操作の設定例<a class="headerlink" href="#322-ボタン操作の設定例" title="Permanent link">&para;</a></h3>
+<p>rc_control.pyを利用して、取れた値は、JSONファイルのindexに設定すると有効になります。</p>
+<p><img alt="コントローラのデバッグ3" src="rcdebug9.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.expand", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
